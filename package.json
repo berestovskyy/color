@@ -1,0 +1,112 @@
+{
+  "name": "color",
+  "displayName": "Color!",
+  "description": "Easily distinguish workspaces with color!",
+  "version": "1.2.5",
+  "publisher": "berestovskyy",
+  "author": {
+    "name": "Andriy Berestovskyy",
+    "email": "berestovskyy@gmail.com",
+    "url": "http://b.sumy.ua"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/berestovskyy/color.git"
+  },
+  "icon": "images/icon.png",
+  "files": [
+    "build/src/extension.js",
+    "images/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "extensionKind": [
+    "ui"
+  ],
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "keywords": [
+    "workspace",
+    "color",
+    "accent",
+    "theme"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./build/src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "color.pick",
+        "title": "Pick a workspace color",
+        "category": "Color!"
+      }
+    ],
+    "configuration": {
+      "title": "Color!",
+      "properties": {
+        "color.selected": {
+          "description": "Selected workspace color: `auto` (based on the workspace URI), `custom` (user-entered), or a predefined color name.",
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "custom",
+            "white",
+            "silver",
+            "gray",
+            "black",
+            "pink",
+            "red",
+            "maroon",
+            "coral",
+            "orange",
+            "brown",
+            "beige",
+            "yellow",
+            "olive",
+            "mint",
+            "lime",
+            "green",
+            "aqua",
+            "cyan",
+            "blue",
+            "navy",
+            "violet",
+            "magenta",
+            "fuchsia",
+            "purple"
+          ],
+          "enumDescriptions": [
+            "Assign deterministic color based on the workspace URI.",
+            "Use a user-defined color."
+          ]
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc",
+    "lint": "gts lint",
+    "watch": "tsc -watch",
+    "clean": "gts clean",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@types/vscode": "^1.84.0",
+    "gts": "^7.0.0",
+    "typescript": "^6.0.3"
+  }
+}
