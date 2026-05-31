@@ -1,8 +1,8 @@
 {
   "name": "color",
   "displayName": "Color!",
-  "description": "Easily distinguish workspaces with color!",
-  "version": "1.2.5",
+  "description": "Add color accents to your VS Code windows, workspaces, and `git worktree`s!",
+  "version": "1.2.6",
   "publisher": "berestovskyy",
   "author": {
     "name": "Andriy Berestovskyy",
@@ -16,7 +16,7 @@
   "icon": "images/icon.png",
   "files": [
     "build/src/extension.js",
-    "images/",
+    "images/icon.png",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"

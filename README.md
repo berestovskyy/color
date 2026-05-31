@@ -1,12 +1,16 @@
 # Color! Extension
 
-Add colors to your VS Code windows, workspaces, and `git worktree`s!
-A smaller, better open-source alternative to the `Window Colors` and `Peacock` extensions.
+Add color accents to your VS Code windows, workspaces, and `git worktree`s!
+A smaller, better open-source alternative to the `Window Colors` and `Peacock` extensions:
 
-![Some of the Color! accents](images/color.png)
+1. **Tiny:** less than 300 lines of code.
+2. **Subtle:** changes just the activity and title bar, keeping the rest of the UI intact.
+3. **Deterministic:** Automatically assigns a unique color to each workspace based on its URI.
+4. **Intelligent:** Assigns specific colors if explicitly requested in the folder name (e.g., `my-project-red` or `my-other-project.blue`). Also recognizes branch or context keywords in workspace URIs, ensuring paths like `my-project-main` and `my-project-test` automatically receive distinct colors.
+5. **Customizable:** Not a fan of the automatic selection? Easily override it using the `Color!: Pick a workspace color` command. Simply choose the `custom` option from the dropdown to input your own user-defined exact hex color.
 
-1. **Deterministic Color Assignment:** Automatically assigns a unique color to each workspace based on its URI.
-2. **Intelligent Path Recognition:** Recognizes path suffixes to assign specific colors. For instance, `git worktree` directories like `main` and `test` will get distinct colors.
+<img src="images/color.png" width="49%" alt="Some of the workspace Color! accents">
+<img src="images/pick.png" width="49%" alt="Pick your color!">
 
 ## Quick Start
 
@@ -15,41 +19,33 @@ A smaller, better open-source alternative to the `Window Colors` and `Peacock` e
 
 ## Frequently Asked Questions
 
-### The extension is not working and the color isn't changing
+### 1. The extension is not working and the color isn't changing
 
 This usually happens when a workspace URI is unavailable. Please open a folder or a workspace and try again.
 
-### My `.vscode/settings.json` file is getting modified all the time
+### 2. My `.vscode/settings.json` file is getting modified all the time
 
-VS Code stores per-window color settings either in the workspace configuration file (e.g., `my_workspace.code-workspace`) or directly inside the folder (e.g., `my_folder/.vscode/settings.json`).
+VS Code stores per-window color settings either in the workspace configuration file (e.g., `my_project.code-workspace`) or directly inside the folder (e.g., `my_project/.vscode/settings.json`).
 
-If your `my_folder/.vscode/settings.json` file is tracked by a version control system like Git, it is best practice to save your workspace outside of `my_folder` using `File > Save Workspace As...`, like this:
+If your `my_project/.vscode/settings.json` file is tracked by a version control system like Git, it is best practice to save your workspace outside of `my_project` folder using `File > Save Workspace As...`, like this:
 
 ```text
-my_workspace.code-workspace
-my_folder/
-    .git
+my_project.code-workspace
+my_project/
     .vscode/
         settings.json
-    src/
     [...]
 ```
 
-Note: The `my_workspace.code-workspace` file should not be tracked by Git and should live outside of the project folder (or be explicitly added to your `.gitignore` file).
+Note: The `my_project.code-workspace` file should not be tracked by Git and should live outside of the project folder (or be explicitly added to your `.gitignore` file).
 
-Now, when you open `my_workspace.code-workspace`, all window color preferences will be safely stored there, and any local `.vscode/settings.json` color modifications will be avoided.
+Now, when you open `my_project.code-workspace`, all window color preferences will be safely stored there, and any local `.vscode/settings.json` color modifications will be avoided.
 
-### My `.code-workspace` file is getting modified all the time
+### 3. My `.code-workspace` file is getting modified all the time
 
 Save your workspace locally under a different name outside of your tracked folders, or add it directly to your `.gitignore`.
 
-See the question above for more structural details.
-
-## Features
-
-1. It just works: By default, it deterministically selects an accent color based on the workspace URI. The extension takes into account the workspace suffix (e.g., `my-workspace-red`) or uses the full URI to calculate the color.
-2. It's customizable: Easily override the automatic color by using the `Color!: Pick a workspace color` command.
-3. Endless customization: Pick your favorite custom hex or named color by selecting `Color!: Pick a workspace color > Custom`.
+See the question above for more details.
 
 ## Extension Settings
 

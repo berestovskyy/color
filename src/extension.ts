@@ -63,6 +63,8 @@ const BRANCH_MAP = new Map<string, string>([
   ['hotfix', 'red'],
   ['release', 'fuchsia'],
   ['refactor', 'olive'],
+  ['test', 'lime'],
+  ['spec', 'lime'],
   ['experiment', 'violet'],
   ['experimental', 'violet'],
   ['chore', 'silver'],
