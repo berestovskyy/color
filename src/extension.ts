@@ -205,12 +205,14 @@ async function pickColor(): Promise<string> {
 
 /** Calculates a positive integer digest of a string. */
 function digest(s: string): number {
-  return Math.abs(
-    s
-      .split('')
-      .map(s => s.charCodeAt(0))
-      .reduce((a, c) => (a + ((a << 7) + (a << 3))) ^ c),
-  );
+  return s
+    ? Math.abs(
+        s
+          .split('')
+          .map(s => s.charCodeAt(0))
+          .reduce((a, c) => (a + ((a << 7) + (a << 3))) ^ c),
+      )
+    : 0;
 }
 
 /** Updates current workspace color. */

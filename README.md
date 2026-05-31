@@ -15,9 +15,9 @@ A smaller, better open-source alternative to the `Window Colors` and `Peacock` e
 
 ## Frequently Asked Questions
 
-### The extension does not work, the color is not changing
+### The extension is not working and the color isn't changing
 
-Most likely, the workspace URI is not available. Open a folder or a workspace and try again.
+This usually happens when a workspace URI is unavailable. Please open a folder or a workspace and try again.
 
 ### My `.vscode/settings.json` file is getting modified all the time
 
